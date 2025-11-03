@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSV Data Analyzer</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="app">
+        <header class="header">
+            <h1>
+                <i class="fas fa-brain"></i>
+                CSV Data Analyzer
+            </h1>
+            <p>Upload your CSV and ask questions about your data using AI</p>
+        </header>
+
+        <main class="main-content">
+            <!-- File Upload Section -->
+            <section class="upload-section">
+                <h2 class="section-title">
+                    <i class="fas fa-file-csv"></i>
+                    Upload Your CSV File
+                </h2>
+
+                <div class="file-upload-area" id="fileUploadArea">
+                    <input type="file" id="fileInput" accept=".csv" style="display: none;">
+                    <div class="upload-content" id="uploadContent">
+                        <div class="upload-icon">
+                            <i class="fas fa-cloud-upload-alt"></i>
+                        </div>
+                        <div class="upload-text">
+                            Drag & drop your CSV file here
+                        </div>
+                        <div class="upload-subtext">
+                            or click to browse files
+                        </div>
+                    </div>
+                    <div class="file-info" id="fileInfo" style="display: none;">
+                        <div class="file-name" id="fileName"></div>
+                        <div class="file-details" id="fileDetails"></div>
+                        <button class="remove-file-btn" id="removeFileBtn">
+                            <i class="fas fa-times"></i>
+                            Remove file
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Query Input Section -->
+            <section class="query-section">
+                <h2 class="section-title">
+                    <i class="fas fa-search"></i>
+                    Ask About Your Data
+                </h2>
+
+                <form id="queryForm">
+                    <textarea
+                        class="query-input"
+                        id="queryInput"
+                        placeholder="Please upload a CSV file first to ask questions"
+                        disabled
+                    ></textarea>
+
+                    <button type="submit" class="submit-button" id="submitButton" disabled>
+                        <i class="fas fa-paper-plane"></i>
+                        Analyze Data
+                    </button>
+                </form>
+            </section>
+
+            <!-- Results Section -->
+            <section class="results-section">
+                <h2 class="section-title">
+                    <i class="fas fa-robot"></i>
+                    Analysis Results
+                </h2>
+
+                <div class="response-card" id="resultsContent">
+                    <div class="placeholder-text">
+                        <i class="fas fa-check-circle"></i>
+                        Upload a CSV file and ask a question to see results
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <p>Powered by LangGraph & GPT4All • Built with HTML/CSS/JS</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
