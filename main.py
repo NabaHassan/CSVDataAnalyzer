@@ -18,7 +18,7 @@ import time
 
 # ---- SETUP ----
 os.environ[
-    "OPENAI_API_KEY"] = "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"
+    "OPENAI_API_KEY"] = ""
 
 
 # ---- STATE STRUCTURE ----
@@ -565,4 +565,5 @@ graph.add_edge("passInfoThroughLlm", "formatLlmResponse")
 graph.add_edge("formatLlmResponse", END)
 
 graph.set_entry_point("uploadCsvFile")
+
 app = graph.compile()
